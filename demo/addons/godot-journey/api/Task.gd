@@ -10,10 +10,12 @@ var task_subscriber = null
 
 func _enter_tree():
 	var config = ConfigFile.new()
-	config.load("res://journey_config.cfg")
+	assert(config.load("res://godot-journey.cfg") == OK)
 	if Engine.is_editor_hint():
+		var task_subscriber_script = load(config.get_value("editor", "script"))
+		assert(task_subscriber_script)
 		var ancestor = get_parent()
-		while ancestor and not ancestor is load(config.get_value("editor", "script")):
+		while ancestor and task_subscriber_script and not ancestor is task_subscriber_script:
 			ancestor = ancestor.get_parent()
 		if ancestor:
 			task_subscriber = ancestor

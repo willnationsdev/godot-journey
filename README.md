@@ -2,6 +2,8 @@
 
 This project is my attempt to create an Articy: Draft / Twine / YarnSpinner-like experience for Godot Engine 3.x.
 
+For an updated list of the proposed features, see #1
+
 The features these systems provide include a narrative database, a level planner, an interactive dialog system that has access to both of the previous elements, and a nestable graph-based overview of the scenes in your narrative.
 
 The intended roadmap for THIS plugin involves the consolidation of 3 or 4 independent plugins:
